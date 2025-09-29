@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+/* Example with Inter (modern UI font) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Or if you prefer Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif; /* or 'Roboto' */
+  font-size: 16px;
+  line-height: 1.5;
+  color: #222;
+  background-color: #f7f8fa; /* matches your login bg */
+}
