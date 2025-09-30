@@ -1,4 +1,9 @@
 <div class="dashboard-container">
-  <h2>Welcome to the Dashboard!</h2>
-  <p>You’re logged in 🚀</p>
+  @if (dashboardService.currentUser(); as user) {
+    <h2>Welcome to the Dashboard!</h2>
+    <p>You’re logged in 🚀</p>
+    <p>Hello, {{ user.name }}!</p>
+  } @else {
+    <p>Please log in to see your dashboard.</p>
+  }
 </div>
