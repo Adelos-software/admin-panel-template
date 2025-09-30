@@ -9,6 +9,7 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./features/dashboard/dashboard.routes')
         .then(m => m.dashboardRoutes),
+    canActivate: ['authGuard']
   },
   { path: '**', redirectTo: 'login' }
 ];
