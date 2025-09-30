@@ -1,38 +1,40 @@
 import { CommonModule } from '@angular/common';
 import { Component, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { UserCredentials } from '../../models/user-credentials.model';
 
 /**
  * LoginFormComponent
- * 
- * This component provides a simple login form with username and password fields.
- * It emits a login event containing the entered credentials when the form is submitted.
+ *
+ * Provides a user interface for entering login credentials.
+ * Emits a login event with the entered username and password when the form is submitted.
  */
 @Component({
-  selector: 'app-login-form', 
-  standalone: true,           
+  selector: 'app-login-form',
+  standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.scss'
 })
 export class LoginFormComponent {
-  /** Stores the value of the username input field */
+  /** Holds the username entered by the user */
   username = '';
 
-  /** Stores the value of the password input field */
+  /** Holds the password entered by the user */
   password = '';
 
+  /** Displays the company name in the form */
   companyName = '[Company name]';
 
   /**
-   * Emits the login event with the user's credentials.
-   * The parent component can subscribe to this event to handle authentication.
+   * EventEmitter that emits the user's credentials when the form is submitted.
+   * The parent component should handle authentication logic upon receiving this event.
    */
-  @Output() login = new EventEmitter<{ username: string; password: string }>();
+  @Output() login = new EventEmitter<UserCredentials>();
 
   /**
-   * Handles form submission.
-   * Emits the login event with the current username and password values.
+   * Called when the login form is submitted.
+   * Emits the login event with the current username and password.
    */
   onSubmit() {
     this.login.emit({ username: this.username, password: this.password });

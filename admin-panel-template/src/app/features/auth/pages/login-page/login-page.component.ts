@@ -1,13 +1,14 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../../../core/services/auth.service';
 import { LoginFormComponent } from '../../components/login-form/login-form.component';
+import { UserCredentials } from '../../models/user-credentials.model';
 
 /**
  * LoginPageComponent
  * 
- * This component serves as the login page for the admin panel.
- * It displays a login form and handles user authentication.
+ * Represents the login page of the admin panel.
+ * Renders the login form and manages user authentication workflow.
  */
 @Component({
   selector: 'app-login-page', 
@@ -18,25 +19,25 @@ import { LoginFormComponent } from '../../components/login-form/login-form.compo
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginPageComponent {
-  /** Slogan displayed on the login page */
+  /** The slogan text displayed on the login page */
   slogan = '[Add your slogan here]';
 
   /**
-   * Initializes the LoginPageComponent.
-   * @param authService Service for handling authentication logic
-   * @param router Angular Router for navigation
+   * Constructs the LoginPageComponent.
+   * @param authService Service responsible for authentication logic.
+   * @param router Angular Router used for navigation after login.
    */
   constructor(private authService: AuthService, private router: Router) { }
 
   /**
    * Handles the login event emitted by the LoginFormComponent.
-   * Authenticates the user and navigates to the dashboard on success.
-   * Displays an alert on authentication failure.
+   * Authenticates the user and navigates to the dashboard if successful.
+   * Displays an alert if authentication fails.
    * 
-   * @param credentials Object containing username and password
+   * @param credentials The user's login credentials (username and password).
    */
-  onLogin(credentials: { username: string; password: string }) {
-    if (this.authService.login(credentials.username, credentials.password)) {
+  onLogin(credentials: UserCredentials) {
+    if (this.authService.login(credentials)) {
       this.router.navigate(['/dashboard']);
     } else {
       alert('Invalid credentials');
