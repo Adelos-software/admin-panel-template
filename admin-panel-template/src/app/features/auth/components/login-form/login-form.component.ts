@@ -22,6 +22,8 @@ export class LoginFormComponent {
   /** Stores the value of the password input field */
   password = '';
 
+  companyName = '[Company name]';
+
   /**
    * Emits the login event with the user's credentials.
    * The parent component can subscribe to this event to handle authentication.

@@ -1,16 +1,37 @@
+/**
+ * Styles for the login form container.
+ * Uses Flexbox to arrange form elements vertically with spacing.
+ */
 form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 
+  /**
+   * Styles for the form heading.
+   * Sets margin, font size, and color for the title.
+   */
+  h1 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+  }
+
+  /**
+   * Styles for input fields.
+   * Adds padding, border, rounded corners, and font size.
+   */
   input {
     padding: 0.75rem;
     border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 1rem;
-    width: 100%;
   }
 
+  /**
+   * Styles for the submit button.
+   * Sets background color, text color, padding, border radius, and hover effect.
+   */
   button {
     background: #1976d2;
     color: white;
@@ -21,8 +42,32 @@ form {
     font-size: 1rem;
     transition: background 0.3s;
 
+    /**
+     * Hover state for the submit button.
+     * Darkens the background color on mouse hover.
+     */
     &:hover {
       background: #125ca1;
+    }
+  }
+}
+
+/**
+ * Responsive breakpoint for mobile devices.
+ * Adjusts font sizes and padding for better usability on smaller screens.
+ */
+@media (max-width: 600px) {
+  form {
+    h1 {
+      font-size: 1.1rem;
+    }
+    input {
+      font-size: 0.95rem;
+      padding: 0.6rem;
+    }
+    button {
+      font-size: 0.95rem;
+      padding: 0.6rem;
     }
   }
 }

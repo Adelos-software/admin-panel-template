@@ -19,7 +19,7 @@ import { LoginFormComponent } from '../../components/login-form/login-form.compo
 })
 export class LoginPageComponent {
   /** Slogan displayed on the login page */
-  slogan = 'Add your slogan here';
+  slogan = '[Add your slogan here]';
 
   /**
    * Initializes the LoginPageComponent.
