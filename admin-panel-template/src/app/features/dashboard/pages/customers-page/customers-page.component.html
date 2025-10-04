@@ -1,1 +1,21 @@
-<p>customers-page works!</p>
+<h2>Customers</h2>
+<table class="customers-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Company</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (customer of customers; track customer.id) {
+    <tr>
+      <td>{{ customer.name }}</td>
+      <td>{{ customer.email }}</td>
+      <td>{{ customer.phone }}</td>
+      <td>{{ customer.company }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
