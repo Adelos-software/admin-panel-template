@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import { CUSTOMERS } from "../../../../../core/fake-db/fake-db";
-import { Customer } from "../../../models/customer.model";
+import { CUSTOMERS } from "../../../core/fake-db/fake-db";
+import { Customer } from "../models/customer.model";
 
 /**
  * CustomerService

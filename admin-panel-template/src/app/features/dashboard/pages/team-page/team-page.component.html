@@ -1,1 +1,19 @@
-<p>team-page works!</p>
+<h2>Our Team</h2>
+<table class="team-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Profession</th>
+      <th>Hours Worked</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (member of teamMembers; track member.id) {
+    <tr>
+      <td>{{ member.name }}</td>
+      <td>{{ member.profession }}</td>
+      <td>{{ member.hoursWorked }}</td>
+    </tr>
+    }
+  </tbody>
+</table>

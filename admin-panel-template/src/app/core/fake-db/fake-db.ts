@@ -1,5 +1,6 @@
 import { UserCredentials } from "../../features/auth/models/user-credentials.model";
 import { Customer } from "../../features/dashboard/models/customer.model";
+import { TeamMember } from "../../features/dashboard/models/team-meber.model";
 import { User } from "../../shared/models/user.model";
 
 
@@ -66,4 +67,17 @@ export const CUSTOMERS: Customer[] = [
   { id: 8, name: 'Sophia Garcia', email: 'sophia.garcia@example.com',  phone: '+1-555-8080', company: 'Wonka Industries' },
   { id: 9, name: 'James Anderson',email: 'james.anderson@example.com', phone: '+1-555-9090', company: 'Oscorp' },
   { id: 10, name: 'Isabella Martinez',email: 'isabella.martinez@example.com', phone: '+1-555-1111', company: 'Tyrell Corporation' }
+];
+
+/**
+ * Array of team members for demo purposes.
+ */
+
+export const TEAM_MEMBERS: TeamMember[] = [
+  { id: 1, name: 'Alice Johnson', profession: 'Frontend Developer', hoursWorked: 120 },
+  { id: 2, name: 'Bob Smith', profession: 'Backend Developer', hoursWorked: 135 },
+  { id: 3, name: 'Charlie Brown', profession: 'UI/UX Designer', hoursWorked: 98 },
+  { id: 4, name: 'Diana Prince', profession: 'Project Manager', hoursWorked: 145 },
+  { id: 5, name: 'Ethan Clark', profession: 'QA Engineer', hoursWorked: 110 },
+  { id: 6, name: 'Fiona Davis', profession: 'DevOps Engineer', hoursWorked: 125 }
 ];
