@@ -1,1 +1,16 @@
-<p>customer-info-page works!</p>
+<div class="customer-info-container">
+  @if (customer) {
+  <div class="customer-card">
+    <h2>{{ customer.name }}</h2>
+    <div class="customer-details">
+      <p><span>Email:</span> {{ customer.email }}</p>
+      <p><span>Phone:</span> {{ customer.phone }}</p>
+      <p><span>Company:</span> {{ customer.company }}</p>
+    </div>
+  </div>
+  } @else {
+  <div class="customer-card not-found">
+    <p>❌ Customer not found.</p>
+  </div>
+  }
+</div>

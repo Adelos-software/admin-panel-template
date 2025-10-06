@@ -10,7 +10,7 @@
   </thead>
   <tbody>
     @for (customer of customers; track customer.id) {
-    <tr>
+    <tr (click)="goToCustomer(customer.id)" class="clickable">
       <td>{{ customer.name }}</td>
       <td>{{ customer.email }}</td>
       <td>{{ customer.phone }}</td>

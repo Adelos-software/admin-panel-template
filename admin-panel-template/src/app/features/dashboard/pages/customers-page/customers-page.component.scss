@@ -15,3 +15,12 @@
 .customers-table th {
   background: #f4f4f4;
 }
+
+.clickable {
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.clickable:hover {
+  background: #f0f0f0;
+}
